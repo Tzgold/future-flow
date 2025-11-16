@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 
 export function Hero() {
   return (
