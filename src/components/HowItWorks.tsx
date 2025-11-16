@@ -39,8 +39,8 @@ export function HowItWorks() {
       
       <div className="container px-4 mx-auto relative z-10">
         <div className="text-center space-y-4 mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            How It <span className="bg-gradient-primary bg-clip-text text-transparent">Works</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            How It <span className="underline decoration-2 underline-offset-8">Works</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             From setup to scale, we make AI automation simple and effective.
@@ -52,23 +52,29 @@ export function HowItWorks() {
             <div key={index} className="relative">
               {/* Connection Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary/50 to-transparent" />
+                <div className="hidden lg:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-border to-transparent" />
               )}
 
               {/* Step Card */}
               <div className="relative group">
-                {/* Glow Effect */}
-                <div className={`absolute inset-0 ${step.bgColor} blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-2xl`} />
+                {/* Electric Border Animation */}
+                <div className="absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-foreground via-muted-foreground to-foreground animate-border-beam bg-[length:200%_100%]" 
+                       style={{ 
+                         maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
+                         WebkitMaskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
+                       }} />
+                </div>
                 
-                <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 space-y-4 hover:border-primary/50 transition-all duration-300 hover:shadow-soft">
+                <div className="relative bg-card backdrop-blur-sm border border-border rounded-2xl p-6 space-y-4 hover:shadow-soft transition-all duration-300">
                   {/* Number Badge */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center font-bold text-white text-sm shadow-glow">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-foreground rounded-full flex items-center justify-center font-bold text-background text-sm">
                     {index + 1}
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-xl ${step.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <step.icon className={`w-8 h-8 ${step.color}`} />
+                  <div className="w-16 h-16 rounded-xl bg-muted flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <step.icon className="w-8 h-8 text-foreground" />
                   </div>
 
                   {/* Content */}
@@ -86,7 +92,7 @@ export function HowItWorks() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <button className="group inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300">
+          <button className="group inline-flex items-center gap-2 text-foreground font-semibold hover:gap-4 transition-all duration-300">
             Get Started Today
             <ArrowRight className="w-5 h-5" />
           </button>

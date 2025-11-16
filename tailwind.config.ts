@@ -96,6 +96,21 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "border-beam": {
+          "0%": { "offset-distance": "0%" },
+          "100%": { "offset-distance": "100%" },
+        },
+        "lightning": {
+          "0%, 100%": { opacity: "0" },
+          "10%, 20%": { opacity: "1" },
+          "15%": { opacity: "0.5" },
+          "25%, 100%": { opacity: "0" },
+        },
+        "lightning-strike": {
+          "0%, 90%, 100%": { opacity: "0", transform: "translateY(-100%)" },
+          "92%": { opacity: "1", transform: "translateY(0)" },
+          "96%": { opacity: "0.8" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.3s ease-out",
@@ -105,6 +120,9 @@ export default {
         "scale-in": "scale-in 0.3s ease-out",
         "glow": "glow 2s ease-in-out infinite",
         "float": "float 3s ease-in-out infinite",
+        "border-beam": "border-beam 3s linear infinite",
+        "lightning": "lightning 4s ease-in-out infinite",
+        "lightning-strike": "lightning-strike 8s ease-in-out infinite",
       },
     },
   },
