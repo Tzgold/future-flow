@@ -9,4 +9,3 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-THEIR WILL BE NEW  THINGS
